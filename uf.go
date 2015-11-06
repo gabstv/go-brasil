@@ -114,6 +114,11 @@ func UF(estado string) (string, error) {
 	return "", errors.New("not found")
 }
 
+func ValidUF(uf string) bool {
+	_, ok := uf_estados[uf]
+	return ok
+}
+
 func Estado(uf string) (string, error) {
 	uf = strings.ToUpper(uf)
 	if estado, ok := uf_estados[uf]; ok {
