@@ -126,3 +126,9 @@ func Estado(uf string) (string, error) {
 	}
 	return "", errors.New("not found")
 }
+
+func ValidEstado(estado string) bool {
+	estado = normalize(estado)
+	_, ok := estados_uf[estado]
+	return ok
+}
